@@ -1,0 +1,15 @@
+/* Detta är en class anroppar alla med den i */
+.bg-grey {
+    background-color: gray;
+
+}
+/* alla div VÄGER MINST */
+div {
+    color: red;
+}
+/* hitta sak med id VÄGER MEST */
+#div-1 {
+    color: aqua;
+}
+/* tänk på vilkem ordning när det kommer till samma typ av css anrop. */
+
