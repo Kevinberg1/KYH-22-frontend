@@ -1,15 +1,31 @@
 /* Detta är en class anroppar alla med den i */
-.bg-grey {
+/* .bg-grey {
     background-color: gray;
 
-}
+} */
 /* alla div VÄGER MINST */
-div {
+/* div {
     color: red;
-}
+} */
 /* hitta sak med id VÄGER MEST */
-#div-1 {
+/* #div-1 {
     color: aqua;
-}
-/* tänk på vilkem ordning när det kommer till samma typ av css anrop. */
+} */
+/* tänk på vilkem ordning när det kommer till samma typ av css anrop.
 
+/* *************************************************************************** */
+
+.box {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    
+}
+#parent{
+    display: flex;
+    justify-content: space-between;
+}
