@@ -1,119 +1,359 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
 
-html, body{
+html, body {
     font-family: 'Poppins', sans-serif;
     color: #222529;
 }
+button {
+    border: none;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.btn-theme {
+    background-color: #ff7373;
+    color: #ffffff;
+    padding: 15px 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.25s;
+}
+.btn-theme:hover {
+    background-color: #222529;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.title-1 {
+    font-size: 2.2em;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 32px;
+}
+.title-2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+.title-3 {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+.totoparrow{
+    border: 1px solid #222529;
+    background-color: #ffffff;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    font-size: 1.5rem;
+    padding: 5px 16px;
+    border-radius: 50%;
+    transition: background-color 0.25s, color 0.15s;
+}
+.totoparrow:hover{
+    border: 1px solid #222529;
+    background-color: #222529;
+    color: #ffffff;
+
+}
+.menu-badge{
+    position: absolute;
+    right: -13px;
+    top: -12px;
+    
+    color: #ffffff;
+    background-color: #ff7373;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+
+}
 
 /* header */
-header {
 
-
+header{
+    position: sticky;
+    background-color: rgba(255, 255, 255, 0.985);
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
 }
-/* container */
-header .container{
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1680px;
-    
-    
+header .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logotype toggleicon"
+                         "menu menu";
 }
-/* logotype */
-header .logotype{
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+
+header .logotype {
+    grid-area: logotype;
     font-size: 35px;
     font-weight: 700;
-    
-
+    text-decoration: none;
+    color: #222529;
 }
-/* menu links */
-header .menu-links{
-    flex: 1;
+
+header #menu-links {
+    grid-area: menulinks;
+}
+header .menu-links .menu-link {
     font-weight: 500;
-    display: none;
-    
-
-
+    text-decoration: none;
+    color: #222529;
+    margin: 10px 12px;
+    display: block;
+    transition: color 0.15s;
 }
+
 header .menu-links .menu-link:hover,
-header .menu-links .menu-link.active{
+header .menu-links .menu-link.active {
     color: #ff7373;
     text-decoration: none;
 }
 
-header .menu-links .menu-link{
-    color: #222529;
-    text-decoration: none;
-    margin-left: 12px;
-    margin-right: 12px;
+
+header #menu-icons {
+    grid-area: menuicons;
+    justify-content: center;
+    margin-top: 2rem;
 }
-@media (min-width: 992px){
-    header .menu-links{
+header .menu-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+    header .menu-icons nav {
+        display: none;
+    }
+
+    header .menu-icons .menu-link {
+        position: relative;
+        height: 36px;
+        width: 36px;
         display: flex;
         justify-content: center;
         align-items: center;
-
+        background-color: #ffffff;
+        color:#222529;
+        border-radius: 50%;
+        text-decoration: none;
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
+        margin-left: 1rem;
+        transition: background-color 0.25s, color 0.20s;
+    }
+    header .menu-icons .menu-link:hover,
+    header .menu-icons .menu-link.active {
+        background-color: #222529;
+        color: #ffffff;
+        text-decoration: none;
     }
 
-}
-/* menu-icons */
-header .menu-icons{
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-
+header #toggle-icon {
+    grid-area: toggleicon;
+    
 }
 
-header .menu-icons .menu-link{
-    color: #222529;
-    height: 36px;
-    width: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    background-color: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
+header #menu {
+    grid-area: menu;
+    grid-template-areas: "menulinks"
+                         "menuicons";
+}
+
+
+.showcase {
+    background: #f3f3f3;
+    background: linear-gradient(90deg, #f3f3f3 0%, #f5f5f5 100%);
+    margin-bottom: 110px;
+    
+}
+
+    .showcase .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "column1";
+    }
+
+    .showcase .column-1 {
+        grid-area: column1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+        .showcase .column-1 .content {
+            text-align: center; 
+        }
+        /* .showcase .column-1 .content .title-1 {
+            font-size: 2.2em; 
+        }
+        .showcase .column-1 .content .title-2 {
+            font-size: 1.5em; 
+        }
+        .showcase .column-1 .content .title-3 {
+            font-size: 1em; 
+        } */
+
+
+    .showcase .column-2 {
+        grid-area: column2;
+        display: none;
+    }
+        .showcase .column-2 img {
+            height: 100%;
+            width: auto;
+            
+        }
+
+
+
+
+@media (min-width: 992px) {
+    header #toggle-icon {
+        display: none;
+    }
+    .title-1 {
+        font-size: 3em;
+    }
+    .title-2 {
+        font-size: 2em;
+    }
+    .title-3 {
+        font-size: 1.1em;
+    }
+
+
+    header .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "logotype menu menu";
+    }
+
+    header #menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "menulinks menuicons";
+    }
+
+
+    header .menu-links {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header #menu-icons {
+        margin-top: 0;
+        justify-content: flex-end;
+    }
+
+    header .menu-icons nav {
+        display: flex;
+    }
+
+
+    .showcase .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "column1 column2";
+    }
+
+    .showcase .column-2 {
+        display: block;
+    }
+    .showcase .column-2 img {
+        height: 550px;
+        width: auto;
+    }
+    .showcase .column-1 .content {
+        text-align: left; 
+    }
+}
+@media (min-width: 1400px){
+    .title-1 {
+        font-size: 4em;
+
+    }
+    .title-2 {
+        font-size: 2.5em;
+
+    }
+    .title-3 {
+        font-size: 1.5em;
+    
+    }
+    .showcase .column-2 img {
+        height: 700px;
+    }
+}
+
+
+
+/* featured produkts */
+
+.featured-products{
+
+}
+.featured-products .container{
+    max-width: 1110px;
+    
+}
+.featured-products .container > .title{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+
+}
+.featured-products .card{
+    border-radius: 0;
+
+}
+.featured-products .card .card-body p{
     margin: 5px;
 }
-header .menu-icons .menu-link:hover,
-header .menu-icons .menu-link.active{
-    color: #ffffff;
-    text-decoration: none;
-    background-color: #222529;
+.featured-products .card .card-body{
+    text-align: center;
     
 }
-
-/* showcase */
-.title-1{
-    font-size: 65px;
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 32px;
-
-
+.featured-products .card .card-body .category{
+    font-size: 13px;
+    font-weight: 500;
+    color: #616365;
+    margin-top: 0;
+    
+    
 }
-.title-2{
-    font-size: 35;
+.featured-products .card .card-body .title{
+    font-size: 16px;
     font-weight: 700;
-    line-height: 1;
-    margin-bottom: 16px;
+
+    
     
 }
-.title-3{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1;
-    margin-bottom: 16px;
+.featured-products .card .card-body .rating{
+    color: #ff7373;
+
+    
     
 }
-
-.showcase{
-
+.featured-products .card .card-body .price{
+    font-size: 18px;
+    font-weight: 700;
+    
+    
 }
