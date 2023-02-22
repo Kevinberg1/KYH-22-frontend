@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
+@import './core/colors';
+
+
+html,body{
+    font-family: "poppins" sans-serif;
+}
+@import './core/buttons';
+
+@import './sections/header'

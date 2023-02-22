@@ -1,0 +1,97 @@
+
+header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "logotype toggleicon"
+                             "menus menus";
+
+        .logotype{
+            
+            grid-area: logotype;
+            font-size: 2.188em;
+            font-weight: 700;
+            color: $color-dark-2;
+            text-decoration: none;
+                &:hover{
+                    color: $color-dark-2;
+                    text-decoration: none;
+                } 
+        }
+        .toggle-icon{
+            grid-area: toggleicon;
+            display: felx;
+            justify-self: flex-end;
+            align-self: center;
+            
+        }
+        .menu{
+            grid-area: menus;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: "menulinks"
+                                 "menuicons";
+
+            .menu-links{
+                grid-area: menulinks;
+                font-size: 1em;
+
+                a {
+                    color: $color-dark-2;
+                    text-decoration: none;
+                    display: block;
+                    font-weight: 500;
+                    margin: 15px 12px;
+                    transition: color 0.15s;
+                    font-size: 1.1em;
+
+                    &:hover{
+                        color: $color-theme;
+                        text-decoration: none;
+
+                    }
+                }
+            }
+            .menu-icons{
+                grid-area: menuicons;
+                display: flex;
+                justify-self: center;
+                align-items: center;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+@media (min-width: 992px ){
+    header{
+        .container{
+            grid-template-columns: 1fr 2fr;
+            grid-template-areas: "logotype menus";
+
+            .toggle-icon{
+               display: none;  
+            }
+            .menu{
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "menulinks menuicons";
+// 
+                .menu-links{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .menu-icons{
+                    display: flex;
+                    justify-self: flex-end;
+                    align-items: center;
+                    margin-top: 0px;
+                }
+                                    
+            }
+        }
+    }
+
+}

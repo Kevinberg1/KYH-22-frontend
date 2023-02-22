@@ -1,0 +1,23 @@
+.btn-icon{
+    margin: 5px;
+    height: 36px;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    border: 0;
+    color: $color-dark-2;
+    background-color: $color-light-1;
+    box-shadow: 0 0 5px 2px $color-shadow-2;
+    transition: background-color 0.25s, color 0.2s;
+
+    
+    &:active,
+    &:hover,
+    .active{
+        color: $color-light-1;
+        background-color: $color-dark-2;
+    }
+}
