@@ -1,0 +1,222 @@
+.box-popular-products {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-areas: "case-3"
+        "case-4";
+
+    @include md {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include lg {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "case-4 case-3";
+    }
+
+    gap: 10px;
+}
+
+
+
+.case-3 {
+    margin-top: 6px;
+    scale: 90%;
+    background-color: rgba(128, 128, 128, 0.478);
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    grid-area: case-3;
+
+}
+
+.box-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .text1 {
+
+        font-size: 3em;
+        font-weight: 900;
+
+        color: $color-light-1;
+
+    }
+    
+    .btn-theme {
+        scale: 80%;
+        color: $color-dark-1;
+        background-color: $color-light-1;
+
+
+        &::before {
+            content: "";
+            border-top: 2px solid $color-dark-1;
+            border-left: 2px solid $color-dark-1;
+        }
+
+        &::after {
+            content: "";
+            border-bottom: 2px solid $color-dark-1;
+            border-right: 2px solid $color-dark-1;
+        }
+
+        &:hover {
+            color: $color-light-2;
+            background-color: $color-dark-1;
+
+            &::before {
+                content: "";
+                border-top: 2px solid $color-light-1;
+                border-left: 2px solid $color-light-1;
+            }
+
+            &::after {
+                content: "";
+                border-bottom: 2px solid $color-light-1;
+                border-right: 2px solid $color-light-1;
+            }
+        }
+    }
+}
+
+
+
+
+
+.case-4 {
+    
+    display: grid;
+    grid-area: "case-4";
+    grid-template-columns: 1fr;
+    gap: 20px;
+    scale: 90%;
+
+    @include md {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include lg {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    justify-content: center;
+    align-items: center;
+
+    .collection-card {
+
+
+        p {
+            margin: 0;
+        }
+
+        .card-content {
+            position: relative;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .icons {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+            }
+
+            .icons .link {
+                height: 50px;
+                width: 50px;
+                font-size: 22px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #ffffff;
+                color: #222529;
+                border-radius: 50%;
+                text-decoration: none;
+                box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
+                margin-left: 1rem;
+                transition: background-color 0.25s, color 0.20s;
+                margin-bottom: 1rem;
+
+                @include md {
+                    margin: 3px;
+                    height: 36px;
+                    width: 36px;
+                    font-size: 15px;
+                    margin-bottom: 8px;
+
+                }
+
+                &:hover,
+                &:active {
+                    background-color: #222529;
+                    color: #ffffff;
+                    text-decoration: none;
+                }
+            }
+
+            .btn-theme {
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                padding: 15px;
+            }
+        }
+
+
+        @include lg {
+            .card-content .card-menu {
+                opacity: 0%;
+                transition: all 0.15s;
+            }
+
+            &:hover .card-content .card-menu {
+                opacity: 100%;
+            }
+
+        }
+
+
+
+        .card-body {
+            text-align: center;
+        }
+
+        .category {
+            font-size: 16px;
+            font-weight: 500;
+            color: #616365;
+            margin-top: 15px;
+        }
+
+        .title {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 0px;
+        }
+
+        .ranking {
+            color: #ff7373;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+    }
+}
