@@ -1,6 +1,6 @@
 const arrow = document.querySelector('#top-arrow')
-arrow.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: "smooth" })
+arrow.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: "smooth"})
 })
 
 function starrating(starRating) {
@@ -83,7 +83,90 @@ async function getProducts(target, tag) {
 }
 
 
-console.log(starRatingString);
+
+
+const form = document.getElementById('form');
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const comments = document.getElementById('comments');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    validateInputs();
+});
+
+
+
+const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add('error');
+    inputControl.classList.remove('success')
+}
+
+const setSuccess = element => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+};
+
+const isValidEmail = email => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+const isValidName = name => {
+    const re = /^([a-öA-Ö\u00C0-\u017F]+(([' -][a-öA-Ö])?[a-öA-Ö]*)){2,}$/;
+    return re.test(String(name).toLowerCase());
+}
+
+const validateInputs = () => {
+    const usernameValue = name.value.trim();
+    const emailValue = email.value.trim();
+    const commentsValue = email.value.trim();
+
+
+    if(usernameValue === '') {
+        setError(name, 'name is required');
+    }
+    else if (!isValidName(usernameValue)) {
+        setError(name, 'Provide a valid Name');
+    }else {
+        setSuccess(name);
+    }
+
+    if(emailValue === '') {
+        setError(email, 'Email is required');
+    } else if (!isValidEmail(emailValue)) {
+        setError(email, 'Provide a valid email address');
+    } else {
+        setSuccess(email);
+    }
+    if(commentsValue === '') {
+        setError(comments, 'a comment is required');
+    } 
+    else {
+        setSuccess(comments);
+    }
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 async function handleContactForm(e) {
     e.preventDefault()
@@ -94,15 +177,16 @@ async function handleContactForm(e) {
         comments: "Jag vill att du kontaktar mig så snart som möjligt. Jag behöver återkalla en order."
     }
 
-    const res = await fetch('https://kyh-net22.azurewebsites.net/api/contacts', {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(form)
-    })
+    // const res = await fetch('https://kyh-net22.azurewebsites.net/api/contacts', {
+    //     method: 'post',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(form)
+    // })
 
     if (res.status === 200)
         console.log('tack för din förfrågan!')
 
 }
+

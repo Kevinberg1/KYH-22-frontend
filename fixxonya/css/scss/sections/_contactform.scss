@@ -28,7 +28,7 @@
         .error {
             font-size: 0.9em;
             padding: 5px;
-            color:#ff7373;
+            border-color:#ff7373;
         }
         input,
         textarea {
@@ -57,10 +57,29 @@
         .contact-form-comments {
             grid-area: comments;
         }
+        .input-control input:focus {
+            outline: 0;
+        }
+        
+        .input-control.success input {
+            border-color: #09c372;
+        }
+        
+        .input-control.error input {
+            border-color: #ff3860;
+        }
+        .input-control.success textarea {
+            border-color: #09c372;
+        }
+        
+        .input-control.error textarea {
+            border-color: #ff3860;
+        }
     
 
 
     }
+    
 }
 
 
