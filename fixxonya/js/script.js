@@ -173,20 +173,26 @@ async function handleContactForm(e) {
 
     const form = {
         name: "Kevin Berg",
-        email: "kevinberg@bla.se",
+        email: "kevinberg@live.se",
         comments: "Jag vill att du kontaktar mig så snart som möjligt. Jag behöver återkalla en order."
     }
 
-    // const res = await fetch('https://kyh-net22.azurewebsites.net/api/contacts', {
-    //     method: 'post',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(form)
-    // })
+    const res = await fetch('https://kyh-net22.azurewebsites.net/api/contacts', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(form)
+    })
 
     if (res.status === 200)
-        console.log('tack för din förfrågan!')
+
+    document.getElementById('respons-contact').innerHTML = 'Thank you, for your request !';
+
+
+
+
+        console.log('tack för din förfråg!');an
 
 }
 

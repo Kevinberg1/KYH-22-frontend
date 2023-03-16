@@ -75,6 +75,19 @@
         .input-control.error textarea {
             border-color: #ff3860;
         }
+        #respons-contact{
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            color: $color-theme;
+
+            @include md{
+                justify-content: flex-start;
+            }
+
+        }
     
 
 
